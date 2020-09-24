@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo {
@@ -35,4 +37,42 @@
   to {
     transform: rotate(360deg);
   }
+}
+.MainTable {
+  border: solid blue 2px;
+  width: 40%;
+}
+.MainTable h1 {
+  color: cornflowerblue;
+}
+.CountryTable {
+  margin: 3px;
+  border: solid lightgreen 15px;
+}
+.CountryTable h2 {
+  color: mediumslateblue;
+}
+.ScoreTable {
+  border: solid black 2px;
+  padding: 0 10px 10px 10px;
+  margin: 5px;
+}
+
+.LineTable {
+  border-bottom: solid black 2px;
+  width: 100%;
+  text-align: right;
+}
+.Name {
+  width: 50%;
+
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+}
+.Score {
+  width: 50%;
+
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: maroon;
 }
