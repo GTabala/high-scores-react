@@ -1,18 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import './App.css';
-import CountryHeader from './CountryHeader';
-import CountryTable from './CountryTable';
+import "./App.css";
+import CountryHeader from "./CountryHeader";
+import CountryTable from "./CountryTable";
 
-
-function HighScoreTable({name, scores, orderDirection, ind}) {
+function HighScoreTable({ name, scores, orderDirection, ind }) {
   return (
     <div className="CountryTable" key={ind}>
-        <CountryHeader name={name} />
-        <CountryTable scores={scores}  orderDirection={orderDirection} />
-        
-      
-    
+      <CountryHeader name={name} />
+      <CountryTable scores={scores} orderDirection={orderDirection} />
     </div>
   );
 }

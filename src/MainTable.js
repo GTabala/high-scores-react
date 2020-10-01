@@ -21,7 +21,10 @@ function MainTable() {
     <div className="MainTable">
       <h1>High Scores per Country</h1>
       <button onClick={changeOrder}>{buttonText}</button>
-      <AllCountryTable allCountryScores={allCountryScores} orderDirection={orderDirection} />
+      <AllCountryTable
+        allCountryScores={allCountryScores}
+        orderDirection={orderDirection}
+      />
       {allCountryScores
         .sort((a, b) => a.name.localeCompare(b.name))
         .map((country, ind) => (

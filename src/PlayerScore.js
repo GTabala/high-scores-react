@@ -2,7 +2,7 @@ import React from "react";
 
 import "./App.css";
 
-function PlayerScore({line, ind}) {
+function PlayerScore({ line, ind }) {
   return (
     <table className="LineTable" key={ind}>
       <tbody>
