@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import allCountryScores from "./Scores.js";
+import allCountriesScores from "./Scores.js";
 import "./App.css";
 import HighScoreTable from "./HighScoreTable";
-import AllCountryTable from "./AllCountryTable.js";
+import AllCountriesTable from "./AllCountriesTable.js";
 
 function MainTable() {
   const [orderDirection, setOrderDirection] = useState(0);
@@ -21,11 +21,11 @@ function MainTable() {
     <div className="MainTable">
       <h1>High Scores per Country</h1>
       <button onClick={changeOrder}>{buttonText}</button>
-      <AllCountryTable
-        allCountryScores={allCountryScores}
+      <AllCountriesTable
+        allCountriesScores={allCountriesScores}
         orderDirection={orderDirection}
       />
-      {allCountryScores
+      {allCountriesScores
         .sort((a, b) => a.name.localeCompare(b.name))
         .map((country, ind) => (
           <HighScoreTable

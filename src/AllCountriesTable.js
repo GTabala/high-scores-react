@@ -1,8 +1,8 @@
 import React from "react";
 import HighScoreTable from "./HighScoreTable";
 
-const AllCountryTable = ({ allCountryScores, orderDirection }) => {
-  let scoreArray = allCountryScores
+const AllCountriesTable = ({ allCountriesScores, orderDirection }) => {
+  let scoreArray = allCountriesScores
     // .map((item) =>
     //   item.scores.map((playerScore) => {
     //   return playerScore.n += " (" + item.name + ")";
@@ -12,7 +12,7 @@ const AllCountryTable = ({ allCountryScores, orderDirection }) => {
   console.log(scoreArray);
   return (
     <HighScoreTable
-      name="All country"
+      name="All countries"
       scores={scoreArray}
       orderDirection={orderDirection}
       ind="All"
@@ -20,4 +20,4 @@ const AllCountryTable = ({ allCountryScores, orderDirection }) => {
   );
 };
 
-export default AllCountryTable;
+export default AllCountriesTable;
