@@ -1,20 +1,37 @@
-import React from 'react';
+import React, { useState } from "react";
 import allCountryScores from "./Scores.js";
-import './App.css';
-import HighScoreTable from './HighScoreTable';
+import "./App.css";
+import HighScoreTable from "./HighScoreTable";
+import AllCountryTable from "./AllCountryTable.js";
 
 function MainTable() {
+  const [orderDirection, setOrderDirection] = useState(0);
+  const [buttonText, setButtonText] = useState("Sort from small to great.");
+
+  const changeOrder = () => {
+    setOrderDirection(!orderDirection);
+    setButtonText(
+      !orderDirection
+        ? "Sort from great to small."
+        : "Sort from small to great."
+    );
+  };
+
   return (
     <div className="MainTable">
-        <h1>High Scores per Country</h1>
-        {allCountryScores.sort((a, b) => {
-          if(a.name > b.name){
-            return 1;
-          } else if(a.name < b.name){
-            return -1;
-          } else {return 0;}
-        }).map(country => <HighScoreTable countryScore={country} />)}
-    
+      <h1>High Scores per Country</h1>
+      <button onClick={changeOrder}>{buttonText}</button>
+      <AllCountryTable allCountryScores={allCountryScores} orderDirection={orderDirection} />
+      {allCountryScores
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((country, ind) => (
+          <HighScoreTable
+            name={country.name}
+            scores={country.scores}
+            orderDirection={orderDirection}
+            ind={ind}
+          />
+        ))}
     </div>
   );
 }
